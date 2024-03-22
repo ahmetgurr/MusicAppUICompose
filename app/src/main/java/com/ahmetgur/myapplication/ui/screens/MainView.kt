@@ -1,4 +1,4 @@
-package com.ahmetgur.myapplication.ui
+package com.ahmetgur.myapplication.ui.screens
 
 import android.util.Log
 import androidx.compose.foundation.background
@@ -6,7 +6,6 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -46,22 +45,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import androidx.navigation.NavHostController
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.ahmetgur.myapplication.ui.viewmodels.MainViewModel
 import com.ahmetgur.myapplication.R
+import com.ahmetgur.myapplication.navigation.Navigation
 import com.ahmetgur.myapplication.navigation.Screen
 import com.ahmetgur.myapplication.navigation.screensInDrawer
 import com.ahmetgur.myapplication.navigation.screensInBottom
-import com.ahmetgur.myapplication.ui.screens.AccountDialog
-import com.ahmetgur.myapplication.ui.screens.AccountView
-import com.ahmetgur.myapplication.ui.screens.Browse
-import com.ahmetgur.myapplication.ui.screens.Home
-import com.ahmetgur.myapplication.ui.screens.Library
-import com.ahmetgur.myapplication.ui.screens.Subscription
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
@@ -257,33 +248,6 @@ fun MoreBottomSheet(modifier: Modifier){
                 )
                 androidx.compose.material.Text(text = "Help", fontSize = 20.sp, color = Color.White)
             }
-        }
-    }
-}
-
-
-
-@Composable
-fun Navigation(navController: NavController, viewModel: MainViewModel, pd:PaddingValues){
-
-    NavHost(navController = navController as NavHostController,
-        startDestination = Screen.DrawerScreen.Account.route, modifier = Modifier.padding(pd) ){
-
-        composable(Screen.BottomScreen.Home.bRoute){
-            Home()
-        }
-        composable(Screen.BottomScreen.Browse.bRoute){
-            Browse()
-        }
-        composable(Screen.BottomScreen.Library.bRoute){
-            Library()
-        }
-
-        composable(Screen.DrawerScreen.Account.route){
-            AccountView()
-        }
-        composable(Screen.DrawerScreen.Subscription.route){
-            Subscription()
         }
     }
 }
