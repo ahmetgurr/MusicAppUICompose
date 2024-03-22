@@ -30,8 +30,7 @@ fun Home(){
             stickyHeader {
                 Text(text = it.value[0], modifier = Modifier.padding(16.dp))
                 LazyRow{
-                    items(categories){
-                            cat->
+                    items(categories){ cat->
                         BrowserItem(cat= cat, drawable = R.drawable.baseline_apps_24)
                     }
                 }

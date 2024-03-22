@@ -23,8 +23,7 @@ import com.ahmetgur.myapplication.data.libraries
 @Composable
 fun Library(){
     LazyColumn(){
-        items(libraries){
-                lib ->
+        items(libraries){ lib ->
             LibItem(lib = lib)
         }
     }

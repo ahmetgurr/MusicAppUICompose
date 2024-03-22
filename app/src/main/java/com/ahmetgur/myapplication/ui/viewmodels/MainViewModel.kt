@@ -9,7 +9,8 @@ class MainViewModel: ViewModel() {
 
     private val _currentScreen: MutableState<Screen> = mutableStateOf(Screen.DrawerScreen.Account)
 
-
+    // currentScreen is a mutableState that holds the current
+    // currentScreen, mevcut ekranı tutan bir mutableState'dir, hangi sayfada olduğumuzu tutar
     val currentScreen: MutableState<Screen>
         get() = _currentScreen
 

@@ -286,7 +286,4 @@ fun Navigation(navController: NavController, viewModel: MainViewModel, pd:Paddin
             Subscription()
         }
     }
-
 }
-
-
