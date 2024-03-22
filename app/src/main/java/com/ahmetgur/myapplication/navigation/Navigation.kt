@@ -19,7 +19,7 @@ import com.ahmetgur.myapplication.ui.viewmodels.MainViewModel
 fun Navigation(navController: NavController, viewModel: MainViewModel, pd: PaddingValues){
 
     NavHost(navController = navController as NavHostController,
-        startDestination = Screen.DrawerScreen.Account.route, modifier = Modifier.padding(pd) ){
+        startDestination = Screen.BottomScreen.Home.route, modifier = Modifier.padding(pd) ){
 
         composable(Screen.BottomScreen.Home.bRoute){
             Home()
